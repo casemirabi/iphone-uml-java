@@ -1,18 +1,159 @@
-## Getting Started
+# 📱 Desafio DIO --- Modelagem UML e Implementação do iPhone
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## 📌 Sobre o Projeto
 
-## Folder Structure
+Este projeto foi desenvolvido como parte do desafio de Programação
+Orientada a Objetos da **Digital Innovation One (DIO)**.
 
-The workspace contains two folders by default, where:
+O objetivo foi modelar e implementar, utilizando **UML e Java**, as
+principais funcionalidades apresentadas no lançamento do iPhone:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+-   🎵 Reprodutor Musical\
+-   📞 Aparelho Telefônico\
+-   🌐 Navegador na Internet
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+O projeto aplica conceitos fundamentais de:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+-   Programação Orientada a Objetos (POO)
+-   Interfaces
+-   Implementação de contratos
+-   Organização por pacotes
+-   Modelagem UML
 
-## Dependency Management
+------------------------------------------------------------------------
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## 🧠 Conceito Arquitetural
+
+O iPhone foi modelado como uma classe que implementa três interfaces
+distintas, representando seus diferentes papéis:
+
+-   `ReprodutorMusical`
+-   `AparelhoTelefonico`
+-   `NavegadorInternet`
+
+Isso demonstra o princípio de **segregação de responsabilidades** e uso
+de **contratos via interface**.
+
+------------------------------------------------------------------------
+
+## 🏗️ Estrutura do Projeto
+
+    iphone-java-uml/
+    │
+    ├── src/
+    │   └── br/
+    │       └── com/
+    │           └── dio/
+    │               └── iphone/
+    │                   ├── Main.java
+    │                   ├── iPhone.java
+    │                   └── interfaces/
+    │                       ├── ReprodutorMusical.java
+    │                       ├── AparelhoTelefonico.java
+    │                       └── NavegadorInternet.java
+    │
+    └── README.md
+
+------------------------------------------------------------------------
+
+## 📊 Diagrama UML (Modelo Conceitual)
+
+                <<interface>>
+              ReprodutorMusical
+              -------------------
+              + tocar()
+              + pausar()
+              + selecionarMusica(String)
+
+                <<interface>>
+              AparelhoTelefonico
+              -------------------
+              + ligar(String)
+              + atender()
+              + iniciarCorreioVoz()
+
+                <<interface>>
+              NavegadorInternet
+              -------------------
+              + exibirPagina(String)
+              + adicionarNovaAba()
+              + atualizarPagina()
+
+                        ▲
+                        │
+                     iPhone
+
+A classe `iPhone` implementa as três interfaces, assumindo múltiplos
+comportamentos.
+
+------------------------------------------------------------------------
+
+## 💻 Tecnologias Utilizadas
+
+-   Java 17+
+-   VS Code
+-   Terminal (javac / java)
+-   UML (modelagem conceitual)
+
+------------------------------------------------------------------------
+
+## ▶️ Como Executar o Projeto
+
+### 1️⃣ Compilar
+
+No terminal, na raiz do projeto:
+
+``` bash
+javac -d bin (Get-ChildItem -Recurse -Filter *.java -Path src | ForEach-Object FullName)
+```
+
+### 2️⃣ Executar
+
+``` bash
+java -cp bin br.com.dio.iphone.Main
+```
+
+------------------------------------------------------------------------
+
+## 🎯 Conceitos Aplicados
+
+✔ Interfaces como contrato\
+✔ Implementação múltipla\
+✔ Organização em pacotes\
+✔ Encapsulamento\
+✔ Uso de construtor\
+✔ Sobrescrita com `@Override`\
+✔ Controle de estado interno
+
+------------------------------------------------------------------------
+
+## 🚀 Resultado
+
+O sistema simula:
+
+-   Reprodução de música
+-   Realização de chamadas
+-   Navegação entre páginas
+-   Abertura de abas
+-   Atualização de página
+
+Tudo estruturado sob os princípios da POO.
+
+------------------------------------------------------------------------
+
+## 📌 Aprendizados
+
+Este desafio reforçou:
+
+-   A importância da modelagem antes da implementação
+-   A diferença entre `interface` e `class`
+-   Como o Java aplica contratos via `implements`
+-   Organização profissional de código
+
+------------------------------------------------------------------------
+
+## 👩🏻‍💻 Autora
+
+**Bianca Casemira**\
+Desenvolvedora em formação \| Java \| Arquitetura de Software \|
+Engenharia de Sistemas
